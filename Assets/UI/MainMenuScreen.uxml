@@ -2,8 +2,8 @@
     <Style src="Menu.uss" />
     <ui:VisualElement name="main-menu-screen" class="menu-background">
         <ui:VisualElement name="menu-center-panel" style="flex-grow: 0; width: 50%; height: 100%; background-color: rgba(0, 0, 0, 0.5); align-items: center; justify-content: center;">
-            <ui:VisualElement name="menu-start-title" style="width: 100%; height: 35%; min-height: 150px; background-image: url(&apos;/Assets/UI_Toolkit_Course-Graphics/UI_Toolkit_Course-Graphics/Graphics/Logo.png&apos;); -unity-background-scale-mode: scale-to-fit;" />
-            <ui:VisualElement name="menu-button-list" style="width: 50%; max-width: 200px; align-items: center; justify-content: flex-start;">
+            <ui:VisualElement name="menu-start-title" style="width: 100%; height: 35%; min-height: 150px; background-image: url(&apos;/Assets/UI_Toolkit_Course-Graphics/UI_Toolkit_Course-Graphics/Graphics/Logo.png#Logo&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            <ui:VisualElement name="menu-button-list" class="menu-button-list">
                 <ui:Button text="Start" display-tooltip-when-elided="true" name="start-button" class="button menu-button" />
                 <ui:Button text="Settings" display-tooltip-when-elided="true" name="settings-button" class="button menu-button" />
                 <ui:Button text="Exit" display-tooltip-when-elided="true" name="exit-button" class="button menu-button" />
