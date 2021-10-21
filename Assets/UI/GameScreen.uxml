@@ -6,14 +6,11 @@
                 <ui:Label text="Ammo:" display-tooltip-when-elided="true" name="ammo-label" class="button" style="width: 200px; height: 50px;" />
                 <ui:Label text="&lt;Ammo Count&gt;" display-tooltip-when-elided="true" name="ammo-count" class="button" style="width: 200px; height: 50px;" />
             </ui:VisualElement>
-            <ui:VisualElement name="top-right-panel" style="flex-direction: row-reverse; flex-grow: 1;">
-                <ui:Button text="Back" display-tooltip-when-elided="true" name="back-button" class="button" style="font-size: 20px;" />
-            </ui:VisualElement>
+            <ui:VisualElement name="top-right-panel" style="flex-direction: row-reverse; flex-grow: 1;" />
         </ui:VisualElement>
         <ui:VisualElement name="buttom-panel" style="width: 100%; flex-direction: row; justify-content: space-between; background-color: rgba(0, 0, 0, 0.5);">
             <ui:VisualElement name="buttom-left-panel" style="flex-grow: 1; flex-direction: row;">
                 <ui:Button text="Shoot" display-tooltip-when-elided="true" name="shoot-button" class="button" style="font-size: 20px;" />
-                <ui:Button text="Reload" display-tooltip-when-elided="true" name="reload-button" class="button" style="font-size: 20px;" />
             </ui:VisualElement>
             <ui:VisualElement name="bottom-right-panel" style="flex-direction: row-reverse; flex-grow: 1;" />
         </ui:VisualElement>

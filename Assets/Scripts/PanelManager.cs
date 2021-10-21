@@ -8,7 +8,6 @@ public class PanelManager : MonoBehaviour
 {
     public UIDocument mainMenuScreen;
     public UIDocument gameScreen;
-    public UIDocument settingsScreen;
 
     private int maxAmmoCount = 10;
     private int currentAmmo;
@@ -33,12 +32,6 @@ public class PanelManager : MonoBehaviour
             };
         }
 
-        var settingsButton = mainMenuScreen.rootVisualElement.Q<Button>("settings-button");
-        if (settingsButton != null)
-        {
-            settingsButton.clicked += GoToSettingsScreen;
-        }
-        
         var exitButton = mainMenuScreen.rootVisualElement.Q<Button>("exit-button");
         if (exitButton != null)
         {
@@ -59,32 +52,6 @@ public class PanelManager : MonoBehaviour
                 {
                     ammoCountLabel.text = --currentAmmo + " / " + maxAmmoCount;
                 }
-            };
-        }
-
-        var reloadButton = gameScreen.rootVisualElement.Q<Button>("reload-button");
-        if (reloadButton != null)
-        {
-            reloadButton.clicked += ResetGame;
-        }
-        
-        var backToMenuButton = gameScreen.rootVisualElement.Q<Button>("back-button");
-        if (backToMenuButton != null)
-        {
-            backToMenuButton.clicked += GoToMainScreen;
-        }
-    }
-
-    // Has to be called each time the screen is enabled.
-    private void BindSettingsScreen()
-    {
-        var backButton = settingsScreen.rootVisualElement.Q<Button>("back-button");
-        if (backButton != null)
-        {
-            backButton.clickable.clicked += () =>
-            {
-                Debug.Log("Back Button Clicked");
-                GoToMainScreen();
             };
         }
     }
@@ -109,7 +76,6 @@ public class PanelManager : MonoBehaviour
     {
         SetUIDocumentEnabledState(mainMenuScreen, true);
         SetUIDocumentEnabledState(gameScreen, false);
-        SetUIDocumentEnabledState(settingsScreen, false);
         BindMainMenuScreen();
     }
 
@@ -117,18 +83,9 @@ public class PanelManager : MonoBehaviour
     {
         SetUIDocumentEnabledState(gameScreen, true);
         SetUIDocumentEnabledState(mainMenuScreen, false);
-        SetUIDocumentEnabledState(settingsScreen, false);
         BindGameScreen();
     }
-    
-    private void GoToSettingsScreen()
-    {
-        SetUIDocumentEnabledState(settingsScreen, true);
-        SetUIDocumentEnabledState(mainMenuScreen, false);
-        SetUIDocumentEnabledState(gameScreen, false);
-        BindSettingsScreen();
-    }
-    
+
     private void ResetGame()
     {
         currentAmmo = maxAmmoCount;
